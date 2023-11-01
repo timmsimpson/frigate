@@ -170,6 +170,15 @@ volumes:
 
 NVidia GPUs may be used for object detection using the TensorRT libraries. Due to the size of the additional libraries, this detector is only provided in images with the `-tensorrt` tag suffix. This detector is designed to work with Yolo models for object detection.
 
+```bash
+version: "3.9"
+services:
+  frigate:
+    ...
+    image: ghcr.io/blakeblackshear/frigate:stable-tensorrt
+    ...
+```
+
 ### Minimum Hardware Support
 
 The TensorRT detector uses the 11.x series of CUDA libraries which have minor version compatibility. The minimum driver version on the host system must be `>=450.80.02`. Also the GPU must support a Compute Capability of `5.0` or greater. This generally correlates to a Maxwell-era GPU or newer, check the NVIDIA GPU Compute Capability table linked below.
